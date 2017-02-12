@@ -1,0 +1,8 @@
+<div class="card white nudge">
+
+  <div class="card-content">
+      <md-input-container class="input-field" *ngFor="let skill of skills;">
+       <input md-input placeholder="{{skill[0]}}" id="{{skill[0]}}" type="number" [(ngModel)]="skill[1]"/>
+      </md-input-container>
+  </div>
+</div>

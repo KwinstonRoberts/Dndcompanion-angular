@@ -1,0 +1,11 @@
+<div class="card white nudge" *ngFor="let stat of stats;">
+
+  <div class="card-content">
+  <h6>
+  {{stat[0]}}
+  </h6>
+  <input type="number" [(ngModel)]="stat[1]"/>
+
+  <h5 class="center">{{roundStat((stat[1]-10)/2)}}</h5>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="card col s6">
+  <div class="card-content">
+    <h6>Character name</h6>
+    <input type="text"/>
+  </div>
+</div>
+<div class="card col s6">
+  <form class="card-content">
+    <md-input-container *ngFor="let x of info" id="{{x[0]}}" class="{{'col s' + x[1]}}">
+      <input md-input placeholder="{{x[0]}}" type="text"/>
+    </md-input-container>
+  </form>
+</div>
