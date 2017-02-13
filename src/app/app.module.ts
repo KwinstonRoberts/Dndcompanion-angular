@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {NgModule, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpModule, Http,Response} from '@angular/http';
+import {HttpModule, Http, Response} from '@angular/http';
 import { AppComponent } from './app.component';
 import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
 import {MaterialModule} from "@angular/material";
 import { SkillsComponent } from './skills/skills.component';
+import {DbService} from "./db.service";
 
 @NgModule({
   declarations: [
@@ -21,16 +22,9 @@ import { SkillsComponent } from './skills/skills.component';
     HttpModule,
     MaterialModule.forRoot(),
   ],
-  providers: [
-  ],
+  providers: [DbService],
   bootstrap: [
     AppComponent
   ]
 })
-export class AppModule implements OnInit{
-    constructor(private http: Http) {}
-    ngOnInit(){
-       this.http.get('./api/user');
-       console.log('init');
-  }
-}
+export class AppModule{}

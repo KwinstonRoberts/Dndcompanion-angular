@@ -22,7 +22,7 @@ var userSchema = new Schema({
 
 var User = mongoose.model('User', userSchema);
 
-router.get('api/user', function(req, res) {
+router.get('/api/user', function(req, res) {
 
 // create a new user
   var newUser = User({
