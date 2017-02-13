@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  info:string[][] = [["Class and lvl","4"],["Background","4"],["Player name","4"],["Race","4"],["Alignment","4"],["Experience","4"]];
+  info:any[] = [["Class","3",""],["Lvl","1",0],["Background","4",""],["Player name","4",""],["Race","4",""],["Alignment","4",""],["Experience","4",0]];
 
   constructor(){}
 

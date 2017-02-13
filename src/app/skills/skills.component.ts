@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skills:any[] = [["Acrobatics"],
+  skills:any[] = [["Acrobatics",0],
     ["Animal Handling",0],
     ["Arcana",0],
     ["Athletics",0],
