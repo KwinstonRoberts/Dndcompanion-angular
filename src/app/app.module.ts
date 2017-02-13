@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule, Http,Response} from '@angular/http';
 import { AppComponent } from './app.component';
 import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
@@ -27,4 +27,10 @@ import { SkillsComponent } from './skills/skills.component';
     AppComponent
   ]
 })
-export class AppModule {}
+export class AppModule implements OnInit{
+    constructor(private http: Http) {}
+    ngOnInit(){
+       this.http.get('./api/user');
+       console.log('init');
+  }
+}
