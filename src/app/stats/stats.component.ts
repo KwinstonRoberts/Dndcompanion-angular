@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModifierService} from "../modifier.service";
 
 @Component({
   selector: 'app-stats',
@@ -7,8 +8,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatsComponent {
 
-  stats:any[] = [["Strength",0],["Dexterity",0],["Constitution",0],["Wisdom",0], ["Intelligence",0],["Charisma",0]];
-  roundStat(input){
-    return Math.floor(input);
-  }
+  constructor(public modifier:ModifierService){}
+  public stats:any[] = [["Strength",0],["Dexterity",0],["Constitution",0],["Wisdom",0], ["Intelligence",0],["Charisma",0]];
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModifierService} from "../modifier.service";
 
 @Component({
   selector: 'app-skills',
@@ -6,25 +7,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent implements OnInit {
-  skills:any[] = [["Acrobatics",0],
-    ["Animal Handling",0],
-    ["Arcana",0],
-    ["Athletics",0],
-    ["Deception",0],
-    ["History",0],
-    ["Insight",0],
-    ["Intimidate",0],
-    ["Investigation",0],
-    ["Medicine",0],
-    ["Nature",0],
-    ["Perception",0],
-    ["Performance",0],
-    ["Religion",0],
-    ["Sleight of Hand",0],
-    ["Stealth",0],
-    ["Survival",0]
+
+  constructor(private modifierService:ModifierService) { }
+
+ public skills:(string|Number)[][] =
+   [["Acrobatics", 0,"Dexterity"],
+    ["Animal Handling", 0,"Wisdom"],
+    ["Arcana",0,"Intelligence"],
+    ["Athletics",0,"Strength"],
+    ["Deception",0, "Charisma"],
+    ["History",0,"Intelligence"],
+    ["Insight",0, "Wisdom"],
+    ["Intimidate",0, "Charisma"],
+    ["Investigation",0,"Intelligence"],
+    ["Medicine",0, "Wisdom"],
+    ["Nature",0,"Intelligence"],
+    ["Perception",0, "Wisdom"],
+    ["Performance",0, "Charisma"],
+    ["Persuasion",0, "Charisma"],
+    ["Religion",0,"Intelligence"],
+    ["Sleight of Hand",0,"Dexterity"],
+    ["Stealth",0,"Dexterity"],
+    ["Survival",0, "Wisdom"]
   ];
-  constructor() { }
+
+
+  getSkill(input){
+    return this.modifierService.getMod(input[2]);
+  }
+
+
 
   ngOnInit() {
   }

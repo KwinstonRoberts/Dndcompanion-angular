@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {NgModule, OnInit} from '@angular/core';
+import {NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {HttpModule, Http, Response} from '@angular/http';
+import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
 import {MaterialModule} from "@angular/material";
 import { SkillsComponent } from './skills/skills.component';
 import {DbService} from "./db.service";
+import {ModifierService} from "./modifier.service";
 
 @NgModule({
   declarations: [
@@ -22,9 +23,11 @@ import {DbService} from "./db.service";
     HttpModule,
     MaterialModule.forRoot(),
   ],
-  providers: [DbService],
+  providers: [DbService, ModifierService],
   bootstrap: [
     AppComponent
   ]
 })
-export class AppModule{}
+export class AppModule{
+  constructor(public modifierService:ModifierService){}
+}

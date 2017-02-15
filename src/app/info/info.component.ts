@@ -8,9 +8,20 @@ import {DbService} from "../db.service";
 })
 export class InfoComponent implements OnInit {
 
-  info:any[] = [["Class","3",""],["Lvl","1",0],["Background","4",""],["Player name","4",""],["Race","4",""],["Alignment","4",""],["Experience","4",0]];
-
+  public info:any[] = [["Class","3",""],["Lvl","2",0],["Background","3",""],["Player name","4",""],["Race","4",""],["Alignment","4",""],["Experience","4",0]];
+  level:number = 0;
   constructor(public dbService:DbService){}
+
+  calculate(){
+    var tiers = [0,300,900,2700,6500,14000,23000,34000,48000,64000,85000,100000,120000,140000,165000,195000,225000,265000,305000,355000];
+    for(var x=0; x<tiers.length; x++) {
+      if(this.info[6][2]<tiers[x]){
+        this.level = x;
+        return;
+      }
+    }
+    this.level = 20;
+  }
 
   ngOnInit() {
    var infoData = this.dbService.Create().subscribe(this.callback,this.err);
