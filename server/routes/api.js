@@ -22,8 +22,6 @@ var userSchema = new Schema({
 
 var User = mongoose.model('User', userSchema);
 
-router.get('/api/user', function(req, res) {
-
 // create a new user
   var newUser = User({
     Character_name: 'Topaz',
@@ -38,8 +36,7 @@ router.get('/api/user', function(req, res) {
   newUser.save(function (err) {
     if (err) throw err;
 
-    console.log('User created!');
+    return newUser;
   });
-});
 
   module.exports = User;
