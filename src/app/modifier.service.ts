@@ -10,9 +10,14 @@ export class ModifierService {
   "Intelligence":0,
   "Charisma":0
 };
+ public lvl = 1;
 
  checkStat(){
  }
+
+  setLvlMod(lvl:number){
+    this.lvl = lvl;
+  }
 
   getMod(input:any){
    return this.modifiers[input];

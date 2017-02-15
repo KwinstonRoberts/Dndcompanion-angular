@@ -9,13 +9,17 @@ import {MaterialModule} from "@angular/material";
 import { SkillsComponent } from './skills/skills.component';
 import {DbService} from "./db.service";
 import {ModifierService} from "./modifier.service";
+import { ThrowsComponent } from './throws/throws.component';
+import { ProficiencyComponent } from './proficiency/proficiency.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatsComponent,
     InfoComponent,
-    SkillsComponent
+    SkillsComponent,
+    ThrowsComponent,
+    ProficiencyComponent
   ],
   imports: [
     BrowserModule,
@@ -29,5 +33,4 @@ import {ModifierService} from "./modifier.service";
   ]
 })
 export class AppModule{
-  constructor(public modifierService:ModifierService){}
 }
