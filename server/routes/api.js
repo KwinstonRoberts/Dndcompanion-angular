@@ -19,8 +19,8 @@ var userSchema = new Schema({
 
 
 });
-
-var User = mongoose.model('User', userSchema);
+router.get('/api/user',function(req,res) {
+  var User = mongoose.model('User', userSchema);
 
 // create a new user
   var newUser = User({
@@ -38,5 +38,5 @@ var User = mongoose.model('User', userSchema);
 
     return newUser;
   });
-
+});
   module.exports = User;
