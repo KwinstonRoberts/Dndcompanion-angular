@@ -4,7 +4,7 @@
   <h6>
   {{stat[0]}}
   </h6>
-  <input type="number" (blur)="modifier.checkStat()" (change)="modifier.modify(stat)" [(ngModel)]="stat[1]"/>
+  <input type="number" (change)="modifier.modify(stat)" [(ngModel)]="stat[1]"/>
 
   <h5 class="center">{{modifier.getMod(stat[0])}}</h5>
   </div>
