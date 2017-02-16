@@ -14,7 +14,7 @@ export class ModifierService {
 
   isTrained(trained:boolean){
     if(trained) {
-      return 5
+      return this.getLvl(true);
     }else{
       return 0;
     }
