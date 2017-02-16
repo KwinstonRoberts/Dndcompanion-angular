@@ -10,7 +10,7 @@ export class UsersService {
 
   // Get all posts from the API
   getAllUsers(): Promise<Info[]> {
-    console.log(this.http.get('/api/user'));
+    console.log(this.http.get('/api/user').toPromise());
     return this.http.get('/api/user')
       .toPromise()
       .then(response => response.json())
