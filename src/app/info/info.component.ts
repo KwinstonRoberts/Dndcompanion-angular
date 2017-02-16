@@ -27,7 +27,7 @@ export class InfoComponent implements OnInit {
 
 
   ngOnInit() {
-   var infoData = this.dbService.Create().subscribe(this.callback,this.err);
+   var characters = this.dbService.find().subscribe(this.callback,this.err);
   }
 
   callback(data){

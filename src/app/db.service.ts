@@ -7,8 +7,8 @@ export class DbService {
 
   constructor(private http: Http) { }
 
-  public Create(): Observable<any> {
-    return this.http.get("/api").map(function(res){console.log(res);});
+  public find(): Observable<any> {
+    return this.http.get("/api/find").map(function(res){console.log(res);});
   }
 
 }
