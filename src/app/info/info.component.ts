@@ -15,6 +15,7 @@ export class InfoComponent implements OnInit {
   public users: any[] = [];
   level: number = 0;
 
+
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
 
