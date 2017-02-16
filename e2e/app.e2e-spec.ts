@@ -1,10 +1,10 @@
-import { TmpPage } from './app.po';
+import { Angular2ExpressStarterPage } from './app.po';
 
-describe('tmp App', function() {
-  let page: TmpPage;
+describe('angular2-express-starter App', function() {
+  let page: Angular2ExpressStarterPage;
 
   beforeEach(() => {
-    page = new TmpPage();
+    page = new Angular2ExpressStarterPage();
   });
 
   it('should display message saying app works', () => {

@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class TmpPage {
+export class Angular2ExpressStarterPage {
   navigateTo() {
     return browser.get('/');
   }
