@@ -2,35 +2,16 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-const API = 'mongodb://KyleR:351797asd@ds151289.mlab.com:51289/heroku_6v949zvj';
 var mongoose=require('mongoose');
+var api=require('server/routes/api');
 
 var db = mongoose.connect(API);
 
-var userSchema = new Schema({
-  "character_name": "Gustfinger",
-  "info": {
-  "class": String,
-    "level": Number,
-    "background": String,
-    "race": String,
-    "alignment": String,
-    "experience": Number
-},
-  "inspiration": Number,
-  "stats": {
-  "strength": Number,
-    "dexterity": Number,
-    "constitution": Number,
-    "intelligence": Number,
-    "wisdom": Number,
-    "charisma": Number
-}
-});
 
 var user = db.model('user',userSchema);
 
 const app = express();
+app.use('api/', api);
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -45,18 +26,6 @@ app.use(express.static(path.join(__dirname, 'dist')));
 app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, 'dist/index.html'))
 })
-
-app.get('/api', function(req, res){
-
-  user.find({}, function(err,user){
-
-    if (err) console.log(err);
-
-    console.log(user);
-
-  })
-
-});
 
 /**
  * Get port from environment and store in Express.
