@@ -10,25 +10,25 @@ export class SkillsComponent implements OnInit {
 
   constructor(private modifierService:ModifierService) { }
 
- public skills:(string|Number)[][] =
-   [["Acrobatics", 0,"Dexterity"],
-    ["Animal Handling", 0,"Wisdom"],
-    ["Arcana",0,"Intelligence"],
-    ["Athletics",0,"Strength"],
-    ["Deception",0, "Charisma"],
-    ["History",0,"Intelligence"],
-    ["Insight",0, "Wisdom"],
-    ["Intimidate",0, "Charisma"],
-    ["Investigation",0,"Intelligence"],
-    ["Medicine",0, "Wisdom"],
-    ["Nature",0,"Intelligence"],
-    ["Perception",0, "Wisdom"],
-    ["Performance",0, "Charisma"],
-    ["Persuasion",0, "Charisma"],
-    ["Religion",0,"Intelligence"],
-    ["Sleight of Hand",0,"Dexterity"],
-    ["Stealth",0,"Dexterity"],
-    ["Survival",0, "Wisdom"]
+ public skills:(string|Number|boolean)[][] =
+   [["Acrobatics", 0,"Dexterity",false],
+    ["Animal Handling", 0,"Wisdom",false],
+    ["Arcana",0,"Intelligence",false],
+    ["Athletics",0,"Strength",false],
+    ["Deception",0, "Charisma",false],
+    ["History",0,"Intelligence",false],
+    ["Insight",0, "Wisdom",false],
+    ["Intimidate",0, "Charisma",false],
+    ["Investigation",0,"Intelligence",false],
+    ["Medicine",0, "Wisdom",false],
+    ["Nature",0,"Intelligence",false],
+    ["Perception",0, "Wisdom",false],
+    ["Performance",0, "Charisma",false],
+    ["Persuasion",0, "Charisma",false],
+    ["Religion",0,"Intelligence",false],
+    ["Sleight of Hand",0,"Dexterity",false],
+    ["Stealth",0,"Dexterity",false],
+    ["Survival",0, "Wisdom",false]
   ];
 
 

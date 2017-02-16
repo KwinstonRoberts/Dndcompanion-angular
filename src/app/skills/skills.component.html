@@ -1,10 +1,12 @@
 <div class="card white nudge">
 
   <div class="card-content">
-      <div class="input-field" *ngFor="let skill of skills;">
-        <h6>{{skill[0]}}</h6>
-       <input  id="{{skill[0]}}" type="number" value="{{getSkill(skill)}}" readonly/>
+      <div  *ngFor="let skill of skills;">
+        <input name="{{skill[0]}}" type="checkbox" id="{{skill[0]}}" [(ngModel)]="skill[3]"/>
+        <label for="{{skill[0]}}">{{skill[0]}}: <b>{{getSkill(skill) + modifierService.isTrained(skill[3])}}</b></label>
+        <hr/>
       </div>
-    <h6 class="center">Skills</h6>
+
+    <h5 class="center">Skills</h5>
   </div>
 </div>

@@ -1,11 +1,11 @@
-<div class="card white nudge" *ngFor="let stat of stats; ">
+<div class="card white nudge col s12 m6 l12" *ngFor="let stat of stats; ">
 
   <div class="card-content">
   <h6>
   {{stat[0]}}
   </h6>
-  <input type="number" (change)="modifier.modify(stat)" [(ngModel)]="stat[1]"/>
+  <input type="number" (change)="modifier.modify(stat)" [(ngModel)]="stat[2]"/>
 
-  <h5 class="center">{{modifier.getMod(stat[0])}}</h5>
+  <h5 class="center grey lighten-1 rounded">{{modifier.getMod(stat[0])}}</h5>
   </div>
 </div>

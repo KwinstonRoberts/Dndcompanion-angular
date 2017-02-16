@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModifierService} from "../modifier.service";
 
 @Component({
   selector: 'app-proficiency',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProficiencyComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modifierService:ModifierService) { }
 
   ngOnInit() {
   }

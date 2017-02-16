@@ -12,11 +12,21 @@ export class ModifierService {
 };
  public lvl = 1;
 
- checkStat(){
- }
+  isTrained(trained:boolean){
+    if(trained) {
+      return 5
+    }else{
+      return 0;
+    }
+  }
 
   setLvlMod(lvl:number){
     this.lvl = lvl;
+  }
+
+  getLvl(isHalved:boolean){
+   if(isHalved){return Math.floor(this.lvl/2)}
+    return this.lvl;
   }
 
   getMod(input:any){

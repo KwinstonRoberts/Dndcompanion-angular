@@ -1,3 +1,11 @@
-<p>
-  throws works!
-</p>
+<div class="card white nudge">
+
+  <div class="card-content">
+    <form class="input-field" *ngFor="let throw of throws;">
+      <input name="{{throw[0]}}" type="checkbox" id="{{throw[0]}}" [(ngModel)]="throw[1]"/>
+      <label for="{{throw[0]}}"> {{throw[0]}}: <b>{{modifierService.getMod(throw[0]) + modifierService.isTrained(throw[1])}}</b></label>
+      <hr/>
+    </form>
+    <h5 class="center">Saving Throws</h5>
+  </div>
+</div>

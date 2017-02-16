@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModifierService} from "../modifier.service";
 
 @Component({
   selector: 'app-throws',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThrowsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modifierService:ModifierService) { }
 
+  public throws:any[][] = [["Strength",false], ["Dexterity",false],["Constitution",false],["Intelligence",false],["Wisdom",false],["Charisma",false]];
   ngOnInit() {
   }
 
