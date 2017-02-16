@@ -13,7 +13,7 @@ export class UsersService {
     console.log(this.http.get('/api/user').toPromise());
     return this.http.get('/api/user')
       .toPromise()
-      .then(response => response.json())
+      .then(response => response.json() as Info[])
       .catch(this.handleError);
   }
 

@@ -39,12 +39,6 @@ function handleError(res, reason, message, code) {
 var distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 
-
-  app.get('*', function(req, res) {
-      res.sendFile(path.join(__dirname, 'dist/index.html'));
-});
-
-
 /*  "/api/contacts"
  *    GET: finds all contacts
  *    POST: creates a new contact
