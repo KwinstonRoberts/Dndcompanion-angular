@@ -1,17 +1,53 @@
-#!/usr/bin/env node
+// Get dependencies
+const express = require('express');
+const path = require('path');
+const http = require('http');
+const bodyParser = require('body-parser');
 
-/**
- * Module dependencies.
- */
+const axios = require('axios');
 
-import { app } from '../app';
-import { serverPort } from '../config';
-import * as http from 'http';
+const API = 'mongodb://KyleR:351797asd@ds151289.mlab.com:51289/heroku_6v949zvj';
+
+const app = express();
+
+// Parsers for POST data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Point static path to dist
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
+// Catch all other routes and return the index file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
+
+
+
+
+app.get('/', function(req, res) {
+  res.send('api works');
+});
+
+// Get all posts
+app.get('/users', function(req, res) {
+  // Get posts from the mock api
+  // This should ideally be replaced with a service that connects to MongoDB
+  axios.get(API + "/users")
+    .then(function(posts) {
+      res.status(200).json(posts.data);
+    })
+    .catch(function(error) {
+      res.status(500).send(error)
+    });
+});
+
 
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT || serverPort);
+const port = process.env.PORT || '3000';
 app.set('port', port);
 
 /**
@@ -22,68 +58,4 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
-
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val): boolean | number {
-
-  const normalizedPort = parseInt(val, 10);
-
-  if (isNaN(normalizedPort)) {
-    // named pipe
-    return val;
-  }
-
-  if (normalizedPort >= 0) {
-    // port number
-    return normalizedPort;
-  }
-
-  return false;
-}
-
-/**
- * Event listener for HTTP server 'error' event.
- */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  const bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server 'listening' event.
- */
-
-function onListening() {
-  const addr = server.address();
-  const bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  console.log('Listening on ' + bind);
-}
+server.listen(port, () => console.log(`API running on localhost:${port}`));
