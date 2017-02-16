@@ -10,6 +10,8 @@ const API = 'mongodb://KyleR:351797asd@ds151289.mlab.com:51289/heroku_6v949zvj';
 
 const app = express();
 
+
+
 // Parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -42,7 +44,7 @@ app.get('/users', function(req, res) {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || '3000';
+const port = process.env.PORT || '4000';
 app.set('port', port);
 
 /**
