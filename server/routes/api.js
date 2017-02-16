@@ -14,10 +14,10 @@ router.get('/users', function(req, res) {
   // Get posts from the mock api
   // This should ideally be replaced with a service that connects to MongoDB
   axios.get(API + "/users")
-    .then(posts => {
+    .then(function(posts) {
       res.status(200).json(posts.data);
     })
-    .catch(error => {
+    .catch(function(error) {
       res.status(500).send(error)
     });
 });
