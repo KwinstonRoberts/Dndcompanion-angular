@@ -2,9 +2,11 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
+const API = 'mongodb://KyleR:351797asd@ds151289.mlab.com:51289/heroku_6v949zvj';
+var mongoose=require('mongoose');
 
-// Get our API routes
-const api = require('./server/routes/api');
+var db = mongoose.connect(API);
+
 
 const app = express();
 
@@ -16,12 +18,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
-app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', function(req, res){
   res.sendFile(path.join(__dirname, 'dist/index.html'))
 })
+
+app.get('/api', function(req, res){
+
+  db.find({}, function(err,user){
+
+    if (err) console.log(err);
+
+    console.log(user);
+
+  })
+
+});
 
 /**
  * Get port from environment and store in Express.
