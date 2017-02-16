@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 
 // Catch all other routes and return the index file
-app.get('*', (req, res) => {
+app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
@@ -53,4 +53,4 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, () => console.log(`API running on localhost:${port}`));
+server.listen(port, function() {console.log('API running on localhost:')});
