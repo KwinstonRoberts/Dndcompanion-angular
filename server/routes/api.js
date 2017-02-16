@@ -10,7 +10,7 @@ mongoose.connect(API);
 router.get('/api/find',function(req,res) {
 
   User.find({},function(err, user) {
-    if (err) throw err;
+    if (err) console.log(err);
     console.log(user)
   });
 });
