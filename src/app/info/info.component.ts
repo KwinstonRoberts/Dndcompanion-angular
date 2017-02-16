@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {DbService} from "../db.service";
+import {Component, OnInit} from '@angular/core';
+import {Info}  from './info';
 import {ModifierService} from "../modifier.service";
 import {UsersService} from "../users.service";
 
@@ -10,15 +10,18 @@ import {UsersService} from "../users.service";
 })
 export class InfoComponent implements OnInit {
 
-  public info:any[] = [["Class","3",""],["Lvl","2",0],["Background","3",""],["Player name","4",""],["Race","4",""],["Alignment","4",""],["Experience","4",0]];
-  public users:any[] = []
-  level:number = 0;
-  constructor(public usersService:UsersService, public modifierService:ModifierService){}
 
-  calculate(){
-    var tiers = [0,300,900,2700,6500,14000,23000,34000,48000,64000,85000,100000,120000,140000,165000,195000,225000,265000,305000,355000];
-    for(var x=0; x<tiers.length; x++) {
-      if(this.info[6][2]<tiers[x]){
+  public basic: Info[];
+  public users: any[] = [];
+  level: number = 0;
+
+  constructor(public usersService: UsersService, public modifierService: ModifierService) {
+  }
+
+  calculate() {
+    var tiers = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
+    for (var x = 0; x < tiers.length; x++) {
+      if (this.basic[6][2] < tiers[x]) {
         this.level = x;
         return;
       }
@@ -27,18 +30,12 @@ export class InfoComponent implements OnInit {
     this.modifierService.setLvlMod(this.level);
   }
 
-ngOnInit() {
-  // Retrieve posts from the API
-  this.usersService.getAllUsers().subscribe(users => {
-    this.users = users;
-  });
-}
-  callback(data){
-    console.log(data);
+  ngOnInit() {
+    // Retrieve posts from the API
+    this.usersService.getAllUsers().then((basics: Info[]) => {
+      this.basic = basics.map((basic) => {
+        return basic;
+      });
+    });
   }
-
-  err(data){
-    console.log(data);
-  }
-
 }

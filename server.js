@@ -1,10 +1,9 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var mongodb = require("mongodb");
+var path = require("path");
 var ObjectID = mongodb.ObjectID;
-
 var USER_COLLECTION = "users";
-
 var app = express();
 app.use(bodyParser.json());
 
@@ -12,7 +11,7 @@ app.use(bodyParser.json());
 var db;
 
 // Connect to the database before starting the application server.
-mongodb.MongoClient.connect(process.env.MONGODB_URI, function (err, database) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://KyleR:351797asd@ds153669.mlab.com:53669/heroku_w72x9cr2", function (err, database) {
   if (err) {
     console.log(err);
     process.exit(1);
@@ -37,8 +36,12 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-app.get("*",function(req,res){
-  res.sendFile(__dirname, '/dist/index.html');
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
+
+  app.get('*', function(req, res) {
+      res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 
@@ -47,7 +50,7 @@ app.get("*",function(req,res){
  *    POST: creates a new contact
  */
 
-app.get("/api/contacts", function(req, res) {
+app.get("/api/user", function(req, res) {
   db.collection(USER_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");

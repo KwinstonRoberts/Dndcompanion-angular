@@ -30,7 +30,7 @@ import {UsersService} from "./users.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
   ],
   providers: [DbService,UsersService, ModifierService],
   bootstrap: [
