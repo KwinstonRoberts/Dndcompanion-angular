@@ -1,17 +1,13 @@
+// Get dependencies
 const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-var mongoose=require('mongoose');
-var api=require('server/routes/api');
 
-var db = mongoose.connect(API);
-
-
-var user = db.model('user',userSchema);
+// Get our API routes
+const api = require('./server/routes/api');
 
 const app = express();
-app.use('api/', api);
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -21,11 +17,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
+app.use('/api', api);
 
 // Catch all other routes and return the index file
-app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname, 'dist/index.html'))
-})
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 /**
  * Get port from environment and store in Express.
@@ -41,6 +38,6 @@ const server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port, function ( ) {
-  console.log("Server started at port " + port);
+server.listen(port, function() {
+  console.log("API running on localhost:" + port);
 });
