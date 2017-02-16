@@ -1,7 +1,9 @@
 <div class="card">
-  <div class="card-content">
-    <div *ngFor="let languageProf of languageProfs">
-      <input class="'col s8" value = "{{languageProf}}"/><button class="col s2 btn blue"></button><button class="col s2 btn red"></button>
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addLanguageProf()">+</button>
+      <div *ngFor="let languageProf of languageProfs">
+        <div class='col s10'><input value ="{{languageProf}}"/></div><button (click)="removeLanguageProf(languageProf)" class="col s2 btn red">-</button>
     </div>
   </div>
+  <h5 class="center">Languages and Proficiencies</h5>
 </div>

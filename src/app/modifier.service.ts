@@ -34,7 +34,7 @@ export class ModifierService {
  }
 
   modify(input:any){
-      this.modifiers[input[0]] = Math.floor((input[1]-10)/2);
+    this.modifiers[input[0]] = Math.floor((input[1]-10)/2);
 
   }
 }
