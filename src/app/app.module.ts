@@ -13,6 +13,7 @@ import { ThrowsComponent } from './throws/throws.component';
 import { ProficiencyComponent } from './proficiency/proficiency.component';
 import { InspireComponent } from './inspire/inspire.component';
 import { LanguagesProfsComponent } from './languages-profs/languages-profs.component';
+import {UsersService} from "./users.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { LanguagesProfsComponent } from './languages-profs/languages-profs.compo
     HttpModule,
     MaterialModule.forRoot(),
   ],
-  providers: [DbService, ModifierService],
+  providers: [DbService,UsersService, ModifierService],
   bootstrap: [
     AppComponent
   ]
