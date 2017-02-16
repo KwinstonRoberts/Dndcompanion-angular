@@ -7,6 +7,28 @@ var mongoose=require('mongoose');
 
 var db = mongoose.connect(API);
 
+var userSchema = new Schema({
+  "character_name": "Gustfinger",
+  "info": {
+  "class": String,
+    "level": Number,
+    "background": String,
+    "race": String,
+    "alignment": String,
+    "experience": Number
+},
+  "inspiration": Number,
+  "stats": {
+  "strength": Number,
+    "dexterity": Number,
+    "constitution": Number,
+    "intelligence": Number,
+    "wisdom": Number,
+    "charisma": Number
+}
+});
+
+var user = db.model('user',userSchema);
 
 const app = express();
 
@@ -26,7 +48,7 @@ app.get('*', function(req, res){
 
 app.get('/api', function(req, res){
 
-  db.find({}, function(err,user){
+  user.find({}, function(err,user){
 
     if (err) console.log(err);
 
