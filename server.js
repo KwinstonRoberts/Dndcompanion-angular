@@ -36,8 +36,8 @@ function handleError(res, reason, message, code) {
   res.status(code || 500).json({"error": message});
 }
 
-app.use(express.static(path.join(__dirname, 'dist')));
-
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 
   app.get('*', function(req, res) {
