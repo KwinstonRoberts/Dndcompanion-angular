@@ -25,11 +25,6 @@ app.get('*', (req, res) => {
 
 
 
-
-app.get('/', function(req, res) {
-  res.send('api works');
-});
-
 // Get all posts
 app.get('/users', function(req, res) {
   // Get posts from the mock api
