@@ -1,16 +1,13 @@
 /**
  * Created by KyleW on 2017-02-16.
  */
-export class Info {
-
-  character_name: string;
-  info: {
+export class User {
 
     class: string;
     background: string;
-    level: Number
+    level: number;
     race: string;
     alignment: string;
     experience: number;
-  }
+
 }

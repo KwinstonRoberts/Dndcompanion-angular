@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import {Info, } from "./info/info";
-import { Http, Response} from '@angular/http';
+import {Injectable, OnInit} from '@angular/core';
+import {User} from "./info/user";
+import {Chars} from "./info/chars";
+import { Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -8,13 +9,30 @@ export class UsersService {
 
   constructor(private http: Http) { }
 
-  // Get all posts from the API
-  getAllUsers(): Promise<Info[]> {
-    console.log(this.http.get('/api/user').toPromise());
-    return this.http.get('/api/user')
+  public users: User[];
+  public charNames:Chars[] = [];
+  public charName:string;
+
+  setCharName(input:string){
+    this.charName = input;
+    this.setInfo();
+  }
+
+  setInfo(){
+    this.SelectUser("Gustfinger").then((users: User[]) => {
+      this.users = users.map((user) => {
+        return user;
+      });
+    });
+  }
+
+
+  SelectUser(name:string): Promise<User[]> {
+    return this.http.get('api/user/:'+name)
       .toPromise()
-      .then(response => response.json() as Info[])
+      .then(response => response.json() as User[])
       .catch(this.handleError);
+
   }
 
   private handleError (error: any) {
@@ -22,5 +40,6 @@ export class UsersService {
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
   }
+
 }
 

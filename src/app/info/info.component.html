@@ -8,13 +8,11 @@
 </div>
 <div class="card col s12 m6">
   <form class="card-content">
-    <md-input-container>
-      <input mdInput name="Class" placeholder="Class" type="text" [(ngModel)]="basic.info.class"/>
-      <input mdInput name="Level" placeholder="Level" type="text" [(ngModel)]="basic.info.level" readonly/>
-      <input mdInput name="Background" placeholder="Background" type="text" [(ngModel)]="basic.info.background"/>
-      <input mdInput name="Race" placeholder="Race" type="text" [(ngModel)]="basic.info.race"/>
-      <input mdInput name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="basic.info.alignment"/>
-      <input mdInput name="Experience" placeholder="Experience" type="text" [(ngModel)]="basic.info.experience"/>
-    </md-input-container>
+      <input name="Class" placeholder="Class" type="text" [(ngModel)]="user.class"/>
+      <input name="Level" placeholder="Level" type="text" [(ngModel)]="user.level" readonly/>
+      <input name="Background" placeholder="Background" type="text" [(ngModel)]="user.background"/>
+      <input name="Race" placeholder="Race" type="text" [(ngModel)]="user.race"/>
+      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="user.alignment"/>
+      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="user.experience"/>
   </form>
 </div>

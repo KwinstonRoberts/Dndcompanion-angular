@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Info}  from './info';
 import {ModifierService} from "../modifier.service";
 import {UsersService} from "../users.service";
 
@@ -11,17 +10,17 @@ import {UsersService} from "../users.service";
 export class InfoComponent implements OnInit {
 
 
-  public basic: Info[];
-  public users: any[] = [];
+
   level: number = 0;
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
+  user:any [] = [];
 
   calculate() {
     var tiers = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
     for (var x = 0; x < tiers.length; x++) {
-      if (this.basic[0].info.experience < tiers[x]) {
+      if (this.user[0].info.experience < tiers[x]) {
         this.level = x;
         return;
       }
@@ -31,20 +30,6 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Retrieve posts from the API
-    this.usersService.getAllUsers().then((basics: Info[]) => {
-      this.basic = basics.map((basic) => {
-        basic.info = {
-          class: basic.info.class,
-          level: 0,
-          background: basic.info.background,
-          race: basic.info.race,
-          alignment: basic.info.alignment,
-          experience: basic.info.experience
-        };
-        console.log(basic.info.experience)
-        return basic;
-      });
-    });
+    this.usersService.setCharName("Gustfinger");
   }
 }
