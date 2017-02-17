@@ -3,7 +3,7 @@ import {ModifierService} from "../modifier.service";
 import {UsersService} from "../users.service";
 import {User} from "./user";
 import {Char} from "./chars";
-import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-info',
