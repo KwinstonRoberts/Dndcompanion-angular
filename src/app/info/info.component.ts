@@ -33,11 +33,7 @@ export class InfoComponent implements OnInit {
   ngOnInit() {
 
     this.usersService.getUsers().then((users:User[]) => {
-      this.users = users.map((user) => {
-        user.info.level = 0;
-        return user;
-      });
+      console.log(users);
     });
-    console.log("users:"+ this.users[0] && this.users);
   }
 }
