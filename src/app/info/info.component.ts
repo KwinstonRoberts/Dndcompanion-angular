@@ -16,7 +16,7 @@ export class InfoComponent implements OnInit {
   }
 
   users:User[]
-  level: number = 0);
+  level: number = 0;
   selectedValue = null;
 
   calculate(exp:number) {
