@@ -3,5 +3,5 @@
  **/
 
 export class Char {
- character_name: string;
+ name: string;
 }
