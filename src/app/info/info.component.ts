@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ModifierService} from "../modifier.service";
 import {UsersService} from "../users.service";
+import {User} from "./user";
 
 @Component({
   selector: 'app-info',
@@ -10,7 +11,7 @@ import {UsersService} from "../users.service";
 export class InfoComponent implements OnInit {
 
 
-
+  users:User[];
   level: number = 0;
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
@@ -30,6 +31,9 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usersService.setCharName("GustFinger");
+    this.usersService.getChar().subscribe();
+    this.usersService.getUser("Gustfinger").subscribe((users:User[])=>{
+      this.users = users;
+    });
   }
 }

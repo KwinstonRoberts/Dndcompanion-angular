@@ -1,9 +1,8 @@
 import {Injectable, OnInit} from '@angular/core';
 import {User} from "./info/user";
 import {Chars} from "./info/chars";
-import { Http} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
-import 'rxjs/add/operator/map';
+import {Http, Response} from '@angular/http';
+import 'rxjs/rx';
 
 @Injectable()
 export class UsersService {
@@ -14,27 +13,16 @@ export class UsersService {
   public charNames:Chars[] = [];
   public charName:string;
 
-  setCharName(input:string){
+  setChar(input:string){
     this.charName = input;
-    this.setInfo();
-    console.log(this.users);
   }
 
-  setInfo(){
-    this.SelectUser("Gustfinger").then((users: User[]) => {
-      this.users = users.map((user) => {
-        return user;
-      });
-    });
+  getChar(){
+   return this.http.get("api/character").map((res: Response) => res.json());
   }
 
-
-  SelectUser(name:string): Promise<User[]> {
-    return this.http.get('api/user/'+name)
-      .toPromise()
-      .then(response => response.json() as User[])
-      .catch(this.handleError);
-
+  getUser(name:string){
+    return this.http.get('api/user/'+name).map((res:Response) => res.json());
   }
 
   private handleError (error: any) {
