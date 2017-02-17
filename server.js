@@ -4,6 +4,7 @@ var mongodb = require("mongodb");
 var path = require("path");
 var ObjectID = mongodb.ObjectID;
 var USER_COLLECTION = "users";
+var CHARACTER_COLLECTION = "characters"
 var app = express();
 app.use(bodyParser.json());
 
@@ -55,7 +56,7 @@ app.get("/api/user/:name", function(req, res) {
 });
 
 app.get("/api/character", function(req, res) {
-  db.collection(USER_COLLECTION).find({}, function(err, docs) {
+  db.collection(CHARACTER_COLLECTION).find({}, function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
