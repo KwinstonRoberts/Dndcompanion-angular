@@ -14,7 +14,7 @@ export class InfoComponent implements OnInit {
   public basic: Info[];
   public users: any[] = [];
   level: number = 0;
-
+ public basicDetails:any[] = basic[];
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
@@ -35,6 +35,7 @@ export class InfoComponent implements OnInit {
     // Retrieve posts from the API
     this.usersService.getAllUsers().then((basics: Info[]) => {
       this.basic = basics.map((basic) => {
+        console.log(basic)
         return basic;
       });
     });
