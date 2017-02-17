@@ -36,7 +36,7 @@ export class InfoComponent implements OnInit {
     this.usersService.getAllUsers().then((basics: Info[]) => {
       this.basic = basics.map((basic) => {
         console.log(basic)
-        return basic[0].info.class;
+        return basic[0];
       });
     });
   }
