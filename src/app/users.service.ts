@@ -3,6 +3,7 @@ import {User} from "./info/user";
 import {Chars} from "./info/chars";
 import { Http} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UsersService {
