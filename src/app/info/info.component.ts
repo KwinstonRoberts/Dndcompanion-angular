@@ -42,6 +42,7 @@ export class InfoComponent implements OnInit {
           alignment: basic.info.alignment,
           experience: basic.info.experience
         };
+        console.log(basic.info.experience)
         return basic;
       });
     });
