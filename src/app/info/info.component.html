@@ -2,17 +2,17 @@
   <div class="card-content">
     <h6>Character name</h6>
     <select>
-      <option *ngFor="let char of chars">{{char.character_name}}</option>
+      <option *ngFor="let x of ['Gustfinger']">{{x}}</option>
     </select>
   </div>
 </div>
 <div class="card col s12 m6">
-  <form class="card-content">
-      <input name="Class" placeholder="Class" type="text" [(ngModel)]="users[0]?.info.class"/>
-      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users[0]?.info.level" readonly/>
-      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users[0]?.info.background"/>
-      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users[0]?.info.race"/>
-      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users[0]?.info.alignment"/>
-      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users[0]?.info.experience"/>
+  <form class="card-content" *ngfor="let user of users">
+      <input name="Class" placeholder="Class" type="text" [(ngModel)]="users?.info.class"/>
+      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users?.info.level" readonly/>
+      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users?.info.background"/>
+      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users?.info.race"/>
+      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users?.info.alignment"/>
+      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users?.info.experience"/>
   </form>
 </div>
