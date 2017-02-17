@@ -9,10 +9,10 @@
 <div class="card col s12 m6">
   <form class="card-content">
       <input name="Class" placeholder="Class" type="text" [(ngModel)]="users.class"/>
-      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users[0].level" readonly/>
-      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users[0].background"/>
-      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users[0].race"/>
-      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users[0].alignment"/>
-      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users[0].experience"/>
+      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users.level" readonly/>
+      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users.background"/>
+      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users.race"/>
+      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users.alignment"/>
+      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users.experience"/>
   </form>
 </div>
