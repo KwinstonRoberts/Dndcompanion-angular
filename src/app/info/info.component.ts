@@ -14,8 +14,8 @@ export class InfoComponent implements OnInit {
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
-
-  users:User[]
+  char:string;
+  users:User[];
   level: number = 0;
   selectedValue = null;
 

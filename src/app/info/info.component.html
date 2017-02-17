@@ -1,9 +1,7 @@
 <div class="card col s12 m6">
   <div class="card-content">
     <h6>Character name</h6>
-      <md-select placeholder="Select a character" [(ngModel)]="selectedValue">
-        <md-option *ngFor="let x of ['Gustfinger','Luce']" [value]="x">{{x}}</md-option>
-      </md-select>
+      <input [(ngModal)]="char"/>
   </div>
 </div>
 
