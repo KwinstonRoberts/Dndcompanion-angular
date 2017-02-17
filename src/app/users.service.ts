@@ -21,6 +21,7 @@ export class UsersService {
   setInfo(){
     this.SelectUser("Gustfinger").then((users: User[]) => {
       this.users = users.map((user) => {
+        console.log(user);
         return user;
       });
     });
