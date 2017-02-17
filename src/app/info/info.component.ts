@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ModifierService} from "../modifier.service";
 import {UsersService} from "../users.service";
 import {User} from "./user";
-import {Char} from "./chars";
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -16,7 +15,6 @@ export class InfoComponent implements OnInit {
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
 
-   chars:Char[]
   users:User[]
   level: number = 0;
 
@@ -34,7 +32,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
 
-    this.usersService.getUsers().then((users:User[])=>{
+    this.usersService.getUsers().then((users:User[]) => {
       this.users = users.map((user) => {
         user.info.level = 0;
         return user;
