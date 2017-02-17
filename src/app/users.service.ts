@@ -17,12 +17,18 @@ export class UsersService {
     this.charName = input;
   }
 
-  getChar(){
-   return this.http.get("api/character").map((res: Response) => res.json());
+  getChar():Promise<Char[]> {
+   return this.http.get("api/character")
+     .toPromise()
+     .then((res: Response) => res.json() as Char[])
+     .catch(this.handleError);
   }
 
   getUser(name:string){
-    return this.http.get('api/user/'+name).map((res:Response) => res.json());
+   return this.http.get('api/user/'+name)
+     .toPromise()
+     .then((res: Response) => res.json() as User[])
+     .catch(this.handleError);
   }
 
   private handleError (error: any) {

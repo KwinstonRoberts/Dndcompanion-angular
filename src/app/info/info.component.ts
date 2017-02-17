@@ -7,7 +7,8 @@ import {Char} from "./chars";
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
-  styleUrls: ['./info.component.css']
+  styleUrls: ['./info.component.css'],
+  providers: [UsersService]
 })
 export class InfoComponent implements OnInit {
 
@@ -33,9 +34,23 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usersService.getChar().subscribe((chars:Char[])=>{this.chars = chars});
-    this.usersService.getUser("Gustfinger").subscribe((users:User[])=>{
-      this.users = users;
+    this.usersService.getChar().then((chars:Char[])=>{
+      this.chars = chars.map((char) => {
+        return char;
+      });
+    });
+    this.usersService.getUser("Gustfinger").then((users:User[])=>{
+      this.users = users.map((user) =>{
+        user.info = {
+          class: this.users[0].info.class,
+          background: this.users[0].info.background,
+          level: 0,
+          race: this.users[0].info.race,
+          alignment: this.users[0].info.alignment,
+          experience: this.users[0].info.experience
+        }
+        return user
+      });
     });
     console.log("users:"+ this.users[0].info.alignment);
   }
