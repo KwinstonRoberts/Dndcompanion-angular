@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="card col s12 m6">
-  <form class="card-content" *ngfor="let user of users">
+  <form class="card-content" *ngFor="let user of users">
       <input name="Class" placeholder="Class" type="text" [(ngModel)]="users?.info.class"/>
       <input name="Level" placeholder="Level" type="text" [(ngModel)]="users?.info.level" readonly/>
       <input name="Background" placeholder="Background" type="text" [(ngModel)]="users?.info.background"/>
