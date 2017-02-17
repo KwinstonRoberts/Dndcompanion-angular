@@ -36,7 +36,7 @@ export class InfoComponent implements OnInit {
     this.usersService.getChar().subscribe((chars:Char[])=>{this.chars = chars});
     this.usersService.getUser("Gustfinger").subscribe((users:User[])=>{
       this.users = users;
-      console.log("users:"+users[0].experience);
+      console.log("users:"+this.users[0].experience);
     });
   }
 }
