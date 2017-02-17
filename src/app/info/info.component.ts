@@ -30,6 +30,6 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usersService.setInfo();
+    this.usersService.setCharName("GustFinger");
   }
 }
