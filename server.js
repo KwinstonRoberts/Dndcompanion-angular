@@ -56,7 +56,7 @@ app.get("/api/user/:name", function(req, res) {
 });
 
 app.get("/api/character", function(req, res) {
-  db.collection(CHARACTER_COLLECTION).find({}, function(err, docs) {
+  db.collection(CHARACTER_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
