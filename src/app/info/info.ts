@@ -8,6 +8,7 @@ export class Info {
 
     class: string;
     background: string;
+    level: Number
     race: string;
     alignment: string;
     experience: number;
