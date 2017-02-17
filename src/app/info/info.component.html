@@ -2,7 +2,7 @@
   <div class="card-content">
     <h6>Character name</h6>
       <md-select placeholder="Select a character" *ngFor="let x of ['Gustfinger','Luce']">
-        <md-option [mdValue]="x">{{x}}</md-option>
+        <md-option [ngValue]="x">{{x}}</md-option>
         <md-option>y</md-option>
         <md-option>z</md-option>
       </md-select>
