@@ -16,12 +16,12 @@ export class UsersService {
   setCharName(input:string){
     this.charName = input;
     this.setInfo();
+    console.log(this.users);
   }
 
   setInfo(){
     this.SelectUser("Gustfinger").then((users: User[]) => {
       this.users = users.map((user) => {
-        console.log(user);
         return user;
       });
     });
