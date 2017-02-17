@@ -1,8 +1,8 @@
 <div class="card col s12 m6">
   <div class="card-content">
     <h6>Character name</h6>
-    <select>
-      <option *ngFor="let x of ['Gustfinger']">{{x}}</option>
+    <select [(ngModel)]="selectedValue">
+      <option *ngFor="let x of ['Gustfinger','Luce']" [ngValue]="x">{{x}}</option>
     </select>
   </div>
 </div>
