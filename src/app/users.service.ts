@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {User} from "./info/user";
-import {Chars} from "./info/chars";
+import {Char} from "./info/chars";
 import {Http, Response} from '@angular/http';
 import 'rxjs/Rx';
 
@@ -10,7 +10,7 @@ export class UsersService {
   constructor(private http: Http) { }
 
   public users: User[];
-  public charNames:Chars[] = [];
+  public charNames:Char[] = [];
   public charName:string;
 
   setChar(input:string){
