@@ -7,7 +7,6 @@ import { StatsComponent } from './stats/stats.component';
 import { InfoComponent } from './info/info.component';
 import {MaterialModule} from "@angular/material";
 import { SkillsComponent } from './skills/skills.component';
-import {DbService} from "./db.service";
 import {ModifierService} from "./modifier.service";
 import { ThrowsComponent } from './throws/throws.component';
 import { ProficiencyComponent } from './proficiency/proficiency.component';
@@ -32,7 +31,7 @@ import {UsersService} from "./users.service";
     HttpModule,
     MaterialModule,
   ],
-  providers: [DbService,UsersService, ModifierService],
+  providers: [UsersService, ModifierService],
   bootstrap: [
     AppComponent
   ]
