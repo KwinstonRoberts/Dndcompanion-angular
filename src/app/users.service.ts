@@ -14,21 +14,11 @@ export class UsersService {
   public charNames:Char[] = [];
   public charName:string;
 
-  setChar(input:string){
-    this.charName = input;
-  }
 
-  getChar():Promise<Char[]> {
-   return this.http.get("api/character")
+  getUsers(): Promise<User[]> {
+   return this.http.get('api/user')
      .toPromise()
-     .then((res: Response) => res.json() as Char[])
-     .catch(this.handleError);
-  }
-
-  getUser(name:string){
-   return this.http.get('api/user/'+name)
-     .toPromise()
-     .then((res: Response) => res.json() as User[])
+     .then(response => response.json() as User[])
      .catch(this.handleError);
   }
 

@@ -45,17 +45,8 @@ app.use(express.static(distDir));
  *    POST: creates a new contact
  */
 
-app.get("/api/user/:name", function(req, res) {
-  db.collection(USER_COLLECTION).findOne({character_name: req.params.name}, function(err, docs) {
-    if (err) {
-      handleError(res, err.message, "Failed to get contacts.");
-    } else {
-      res.status(200).json(docs);
-    }
-  });
-});
 
-app.get("/api/character", function(req, res) {
+app.get("/api/user", function(req, res) {
   db.collection(CHARACTER_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");

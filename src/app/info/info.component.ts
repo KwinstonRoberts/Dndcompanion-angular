@@ -13,8 +13,6 @@ import 'rxjs/add/operator/map';
 })
 export class InfoComponent implements OnInit {
 
-
-
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
 
@@ -35,12 +33,8 @@ export class InfoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usersService.getChar().then((chars:Char[])=>{
-      this.chars = chars.map((char) => {
-        return char;
-      });
-    });
-    this.usersService.getUser("Gustfinger").then((users:User[])=>{
+
+    this.usersService.getUsers().then((users:User[])=>{
       this.users = users.map((user) =>{
         user.info.level = 0;
         return user;
