@@ -7,7 +7,7 @@
         <md-option>z</md-option>
       </md-select>
   </div>
-</div>
+
 <div class="card col s12 m6">
   <form class="card-content" *ngFor="let user of users">
       <input name="Class" placeholder="Class" type="text" [(ngModel)]="user?.info.class"/>
@@ -17,4 +17,5 @@
       <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="user?.info.alignment"/>
       <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="user?.info.experience"/>
   </form>
+</div>
 </div>
