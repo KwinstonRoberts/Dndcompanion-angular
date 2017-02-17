@@ -8,11 +8,11 @@
 </div>
 <div class="card col s12 m6">
   <form class="card-content">
-      <input name="Class" placeholder="Class" type="text" [(ngModel)]="users.info.class|async"/>
-      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users.info.level|async" readonly/>
-      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users.info.background|async"/>
-      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users.info.race|async"/>
-      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users.info.alignment|async"/>
-      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users.info.experience|async"/>
+      <input name="Class" placeholder="Class" type="text" [(ngModel)]="(users|async).info.class"/>
+      <input name="Level" placeholder="Level" type="text" [(ngModel)]="(users|async).info.level" readonly/>
+      <input name="Background" placeholder="Background" type="text" [(ngModel)]="(users|async).info.background"/>
+      <input name="Race" placeholder="Race" type="text" [(ngModel)]="(users|async).info.race"/>
+      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="(users|async).info.alignment"/>
+      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="(users|async).info.experience"/>
   </form>
 </div>
