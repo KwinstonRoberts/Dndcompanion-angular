@@ -2,7 +2,7 @@
   <div class="card-content">
     <h6>Character name</h6>
     <select>
-      <option *ngFor="let character of characters"></option>
+      <option *ngFor="let character of usersService.getChar()"></option>
     </select>
   </div>
 </div>
