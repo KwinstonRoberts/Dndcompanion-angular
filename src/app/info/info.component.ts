@@ -42,14 +42,7 @@ export class InfoComponent implements OnInit {
     });
     this.usersService.getUser("Gustfinger").then((users:User[])=>{
       this.users = users.map((user) =>{
-        user.info = {
-          class: this.users[0].info.class,
-          background: this.users[0].info.background,
-          level: 0,
-          race: this.users[0].info.race,
-          alignment: this.users[0].info.alignment,
-          experience: this.users[0].info.experience
-        }
+        user.info.level = 0
         return user
       });
     });
