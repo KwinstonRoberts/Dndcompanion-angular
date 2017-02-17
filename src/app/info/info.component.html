@@ -8,10 +8,13 @@
 </div>
 <div class="card col s12 m6">
   <form class="card-content">
-    <md-input-container *ngFor="let x of basic.info" id="{{x[0]}}" class="{{'col s' + x[1]}}">
-      <input mdInput *ngIf="x[0]=='Lvl'"  name="{{x[0]}}" placeholder="{{x[0]}}" type="text"  [ngModel]="level" readonly/>
-      <input mdInput *ngIf="x[0]=='Experience'"  name="{{x[0]}}" placeholder="{{x[0]}}" type="text" (change)="modifierService.setLvlMod(level)" [(ngModel)]="info[6][2]"(keyup)="calculate(info[6][2])"/>
-      <input mdInput *ngIf="x[0]!='Lvl'&& x[0]!='Experience'"  name="{{x[0]}}" placeholder="{{x[0]}}" type="text" value="{{x[2]}}"/>
+    <md-input-container>
+      <input mdInput name="Class" placeholder="Class" type="text" [ngModel]="basic[0].info.class"/>
+      <input mdInput name="Level" placeholder="Level" type="text"  [ngModel]="basic[0].info.level" readonly/>
+      <input mdInput name="Background" placeholder="Background" type="text"  [ngModel]="basic[0].info.background"/>
+      <input mdInput name="Race" placeholder="Race" type="text"  [ngModel]="basic[0].info.race"/>
+      <input mdInput name="Alignment" placeholder="Alignment" type="text"  [ngModel]="basic[0].info.alignment"/>
+      <input mdInput name="Experience" placeholder="Experience" type="text"  [ngModel]="basic[0].info.experience"/>
     </md-input-container>
   </form>
 </div>
