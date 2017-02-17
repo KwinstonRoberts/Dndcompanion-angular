@@ -11,8 +11,8 @@ import {Char} from "./chars";
 })
 export class InfoComponent implements OnInit {
 
-  chars:Char[];
-  users:User[];
+  public chars:Char[];
+  public users:User[];
   level: number = 0;
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
