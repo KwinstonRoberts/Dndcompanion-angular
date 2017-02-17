@@ -29,7 +29,7 @@ export class UsersService {
 
 
   SelectUser(name:string): Promise<User[]> {
-    return this.http.get('api/user/:'+name)
+    return this.http.get('api/user/'+name)
       .toPromise()
       .then(response => response.json() as User[])
       .catch(this.handleError);
