@@ -1,21 +1,21 @@
 <div class="card col s12 m6">
   <div class="card-content">
     <h6>Character name</h6>
-      <md-select>
-        <md-option>x</md-option>
+      <md-select placeholder="Select a character" *ngFor="let x of ['Gustfinger','Luce']">
+        <md-option [mdValue]="x">{{x}}</md-option>
         <md-option>y</md-option>
         <md-option>z</md-option>
       </md-select>
   </div>
+</div>
 
-<div class="card col s12 m6">
-  <form class="card-content" *ngFor="let user of users">
-      <input name="Class" placeholder="Class" type="text" [(ngModel)]="user?.info.class"/>
-      <input name="Level" placeholder="Level" type="text" value="{{level}}" readonly/>
-      <input name="Background" placeholder="Background" type="text" [(ngModel)]="user?.info.background"/>
-      <input name="Race" placeholder="Race" type="text" [(ngModel)]="user?.info.race"/>
-      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="user?.info.alignment"/>
-      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="user?.info.experience"/>
-  </form>
-</div>
-</div>
+  <div class="card col s12 m6">
+    <form class="card-content" *ngFor="let user of users">
+        <input name="Class" placeholder="Class" type="text" [(ngModel)]="user?.info.class"/>
+        <input name="Level" placeholder="Level" type="text" value="{{level}}" readonly/>
+        <input name="Background" placeholder="Background" type="text" [(ngModel)]="user?.info.background"/>
+        <input name="Race" placeholder="Race" type="text" [(ngModel)]="user?.info.race"/>
+        <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="user?.info.alignment"/>
+        <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="user?.info.experience"/>
+    </form>
+  </div>
