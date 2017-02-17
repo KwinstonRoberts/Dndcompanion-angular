@@ -35,8 +35,8 @@ export class InfoComponent implements OnInit {
     // Retrieve posts from the API
     this.usersService.getAllUsers().then((basics: Info[]) => {
       this.basic = basics.map((basic) => {
-        console.log(this.basic)
-        return this.basic[0];
+        console.log(this.basic);
+        return basic;
       });
     });
   }
