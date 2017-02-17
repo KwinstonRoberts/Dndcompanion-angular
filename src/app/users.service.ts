@@ -27,6 +27,5 @@ export class UsersService {
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
     console.error(errMsg); // log to console instead
   }
-
 }
 

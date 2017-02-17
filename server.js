@@ -47,7 +47,7 @@ app.use(express.static(distDir));
 
 
 app.get("/api/user", function(req, res) {
-  db.collection(CHARACTER_COLLECTION).find({}).toArray(function(err, docs) {
+  db.collection(USER_COLLECTION).find({}).toArray(function(err, docs) {
     if (err) {
       handleError(res, err.message, "Failed to get contacts.");
     } else {
