@@ -37,7 +37,7 @@ export class InfoComponent implements OnInit {
     this.usersService.getUsers().then((users:User[])=>{
       this.users = users.map((user) => {
         user.info.level = 0;
-        console.log(this.users);
+        console.log(this.users[0].character_name);
         return user;
       });
     });
