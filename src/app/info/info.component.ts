@@ -11,13 +11,14 @@ import {Char} from "./chars";
 })
 export class InfoComponent implements OnInit {
 
-  public chars:Char[];
-  public users:User[];
-  level: number = 0;
+
 
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
-  user:any [] = [];
+
+  public chars:Char[];
+  public users:User[];
+  level: number = 0;
 
   calculate() {
     var tiers = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
