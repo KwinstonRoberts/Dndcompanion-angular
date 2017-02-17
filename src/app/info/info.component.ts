@@ -42,8 +42,8 @@ export class InfoComponent implements OnInit {
     });
     this.usersService.getUser("Gustfinger").then((users:User[])=>{
       this.users = users.map((user) =>{
-        user.info.level = 0
-        return user
+        user.info.level = 0;
+        return user;
       });
     });
     console.log("users:"+ this.users[0].info.alignment);
