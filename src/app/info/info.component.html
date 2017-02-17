@@ -8,11 +8,11 @@
 </div>
 <div class="card col s12 m6">
   <form class="card-content" *ngFor="let user of users">
-      <input name="Class" placeholder="Class" type="text" [(ngModel)]="users?.info.class"/>
-      <input name="Level" placeholder="Level" type="text" [(ngModel)]="users?.info.level" readonly/>
-      <input name="Background" placeholder="Background" type="text" [(ngModel)]="users?.info.background"/>
-      <input name="Race" placeholder="Race" type="text" [(ngModel)]="users?.info.race"/>
-      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="users?.info.alignment"/>
-      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="users?.info.experience"/>
+      <input name="Class" placeholder="Class" type="text" [(ngModel)]="user?.info.class"/>
+      <input name="Level" placeholder="Level" type="text" [(ngModel)]="user?.info.level" readonly/>
+      <input name="Background" placeholder="Background" type="text" [(ngModel)]="user?.info.background"/>
+      <input name="Race" placeholder="Race" type="text" [(ngModel)]="user?.info.race"/>
+      <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="user?.info.alignment"/>
+      <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="user?.info.experience"/>
   </form>
 </div>
