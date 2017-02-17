@@ -16,8 +16,8 @@ export class InfoComponent implements OnInit {
   constructor(public usersService: UsersService, public modifierService: ModifierService) {
   }
 
-  public chars:Char[];
-  public users:User[];
+   chars:Char[]
+  users:User[]
   level: number = 0;
 
   calculate() {
@@ -37,10 +37,9 @@ export class InfoComponent implements OnInit {
     this.usersService.getUsers().then((users:User[])=>{
       this.users = users.map((user) => {
         user.info.level = 0;
-        console.log(this.users[0].character_name);
         return user;
       });
     });
-    console.log("users:"+ this.users[0].info.alignment);
+    console.log("users:"+ this.users[0] && this.users);
   }
 }
