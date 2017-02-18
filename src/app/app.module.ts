@@ -13,6 +13,7 @@ import { ProficiencyComponent } from './proficiency/proficiency.component';
 import { InspireComponent } from './inspire/inspire.component';
 import { LanguagesProfsComponent } from './languages-profs/languages-profs.component';
 import {UsersService} from "./users.service";
+import { SecondariesComponent } from './secondaries/secondaries.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {UsersService} from "./users.service";
     ThrowsComponent,
     ProficiencyComponent,
     InspireComponent,
-    LanguagesProfsComponent
+    LanguagesProfsComponent,
+    SecondariesComponent
   ],
   imports: [
     BrowserModule,
