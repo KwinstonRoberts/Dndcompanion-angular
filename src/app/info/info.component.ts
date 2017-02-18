@@ -41,8 +41,9 @@ export class InfoComponent implements OnInit {
 
         return;
       }
-    }
+
     this.level = 20;
+    }
     this.modifierService.setLvlMod(this.level);
   }
 
