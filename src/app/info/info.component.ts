@@ -17,7 +17,15 @@ export class InfoComponent implements OnInit {
   char:string;
   users:User[];
   level: number = 0;
-  selectedValue = null;
+  selectedUser = this.pickUser(this.char);
+
+  pickUser(name:string){
+    for(var x=0; x<this.users.length; x++){
+      if(this.users[x].character_name === name){
+        return this.users[x]
+      }
+    }
+  }
 
   calculate(exp:number) {
     var tiers = [0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000, 120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000];
