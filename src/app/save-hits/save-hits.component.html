@@ -9,17 +9,17 @@
     <div class="row">
       <h6 class="col s6">Successes</h6>
       <div class="col s6">
-        <input class="col s4" type="checkbox"/>
-        <input class="col s4" type="checkbox"/>
-        <input class="col s4" type="checkbox"/>
+        <input name="success1" class="col s4" [(ngModel)]="successes[0]" type="checkbox"/>
+        <input name="success2" class="col s4" [(ngModel)]="successes[1]" type="checkbox"/>
+        <input name="success3" class="col s4" [(ngModel)]="successes[2] "type="checkbox"/>
       </div>
     </div>
     <div class="row">
-      <h6 class="col s6">Successes</h6>
+      <h6 class="col s6">Failures</h6>
       <div class="col s6">
-        <input class="col s4" type="checkbox"/>
-        <input class="col s4" type="checkbox"/>
-        <input class="col s4" type="checkbox"/>
+        <input name="fail1" class="col s4" [(ngModel)]="failures[0]" type="checkbox"/>
+        <input name="fail2" class="col s4" [(ngModel)]="failures[1]" type="checkbox"/>
+        <input name="fail3" class="col s4" [(ngModel)]="failures[2]" type="checkbox"/>
       </div>
     </div>
     <h5 class="center">Death Saves</h5>
