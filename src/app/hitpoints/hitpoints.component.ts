@@ -10,7 +10,11 @@ export class HitpointsComponent implements OnInit {
 
   constructor(public modifierService:ModifierService) { }
 
-    public hitpoints:number = 11 + this.modifierService.getMod("Constitution");
+    public hitpoints:number;
+
+    public getHitpoints(){
+      return this.modifierService.getMod("Constitution") + 11;
+    }
 
   ngOnInit() {
   }
