@@ -17,6 +17,7 @@ import { SecondariesComponent } from './secondaries/secondaries.component';
 import { HitpointsComponent } from './hitpoints/hitpoints.component';
 import { SaveHitsComponent } from './save-hits/save-hits.component';
 import { AttacksComponent } from './attacks/attacks.component';
+import { EquipmentComponent } from './equipment/equipment.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AttacksComponent } from './attacks/attacks.component';
     SecondariesComponent,
     HitpointsComponent,
     SaveHitsComponent,
-    AttacksComponent
+    AttacksComponent,
+    EquipmentComponent
   ],
   imports: [
     BrowserModule,
