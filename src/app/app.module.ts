@@ -14,6 +14,7 @@ import { InspireComponent } from './inspire/inspire.component';
 import { LanguagesProfsComponent } from './languages-profs/languages-profs.component';
 import {UsersService} from "./users.service";
 import { SecondariesComponent } from './secondaries/secondaries.component';
+import { HitpointsComponent } from './hitpoints/hitpoints.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SecondariesComponent } from './secondaries/secondaries.component';
     ProficiencyComponent,
     InspireComponent,
     LanguagesProfsComponent,
-    SecondariesComponent
+    SecondariesComponent,
+    HitpointsComponent
   ],
   imports: [
     BrowserModule,
