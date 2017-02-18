@@ -36,8 +36,7 @@ export class InfoComponent implements OnInit {
       if (exp < tiers[x]) {
         this.level = x;
         this.modifierService.setLvlMod(x);
-        console.log(this.modifierService.getLvl(false));
-        console.log(this.level);
+
         return x;
       }
     }
