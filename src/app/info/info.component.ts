@@ -24,6 +24,7 @@ export class InfoComponent implements OnInit {
     for(var x=0; x<this.users.length; x++){
       if(this.users[x].character_name === name){
         this.selectedUser =  this.users[x];
+        console.log(this.selectedUser.info.experience);
         this.calculate(this.selectedUser.info.experience);
       }
     }
