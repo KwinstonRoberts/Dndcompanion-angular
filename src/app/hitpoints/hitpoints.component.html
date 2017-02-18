@@ -2,11 +2,11 @@
   <div class="card-content">
     <h5 class="center">Hitpoints</h5>
     <div class="row">
-      <h3 class="center col s5">{{getCurrentHP()}}</h3>
+      <h3 class="center col s5">{{currentHP()}}</h3>
       <h3 class="col s2">/</h3>
       <h3 class="col s5">{{getHitpoints()}}</h3>
     </div>
     <h6>Damage</h6>
-    <input [(ngModel)]="damage"/>
+    <input (change)="setCurrentHP()"[(ngModel)]="damage"/>
   </div>
 </div>
