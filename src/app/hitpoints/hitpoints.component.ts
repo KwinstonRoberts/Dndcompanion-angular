@@ -13,8 +13,8 @@ export class HitpointsComponent implements OnInit {
     public currentHP:number;
     public hitpoints:number;
 
-    public getCurrentHP(){
-      return this.hitpoints-this.damage;
+     getCurrentHP(){
+      return this.hitpoints - this.damage;
     }
 
     getHitpoints(){
