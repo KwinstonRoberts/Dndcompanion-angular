@@ -46,7 +46,6 @@ export class InfoComponent implements OnInit {
     this.usersService.getUsers().then((users:User[]) => {
       console.log(users[0]);
       this.users = users.map((user) => {
-        user.info.level =  this.calculate(user.info.experience);
         return user;
       });
     });
