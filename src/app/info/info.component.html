@@ -8,11 +8,11 @@
 
   <div class="card col s12 m6">
     <form class="card-content">
-        <input name="Class" placeholder="Class" type="text" [(ngModel)]="selectedUser?.info.class"/>
-        <input name="Level" placeholder="Level" type="text" value="{{level}}" readonly/>
-        <input name="Background" placeholder="Background" type="text" [(ngModel)]="selectedUser?.info.background"/>
-        <input name="Race" placeholder="Race" type="text" [(ngModel)]="selectedUser?.info.race"/>
-        <input name="Alignment" placeholder="Alignment" type="text" [(ngModel)]="selectedUser?.info.alignment"/>
-        <input name="Experience" placeholder="Experience" type="text" (keyup)="calculate()" [(ngModel)]="selectedUser?.info.experience"/>
+        <input name="Class" placeholder="Class" class="col s12 m6 l4" type="text" [(ngModel)]="selectedUser?.info.class"/>
+        <input name="Level" placeholder="Level" class="col s12 m6 l4" type="text" value="{{level}}" readonly/>
+        <input name="Background" placeholder="Background" class="col s12 m6 l4" type="text" [(ngModel)]="selectedUser?.info.background"/>
+        <input name="Race" placeholder="Race" type="text" class="col s12 m6 l4" [(ngModel)]="selectedUser?.info.race"/>
+        <input name="Alignment" placeholder="Alignment" class="col s12 m6 l4" type="text" [(ngModel)]="selectedUser?.info.alignment"/>
+        <input name="Experience" placeholder="Experience" class="col s12 m6 l4" type="text" (keyup)="calculate()" [(ngModel)]="selectedUser?.info.experience"/>
     </form>
   </div>
