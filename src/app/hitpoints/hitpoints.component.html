@@ -1,8 +1,8 @@
 <div class="card col s12">
   <div class="card-content">
     <h5 class="center">Hitpoints</h5>
-    <h2> class=center{{currentHitpoints + '/' + getHitpoints()}}</h2>
+    <h3 class="center">{{(getHitpoints() - damage) + '/' + getHitpoints()}}</h3>
     <h6>Damage</h6>
-    <input [(ngModel)]="currentHitpoints"/>
+    <input [(ngModel)]="damage"/>
   </div>
 </div>

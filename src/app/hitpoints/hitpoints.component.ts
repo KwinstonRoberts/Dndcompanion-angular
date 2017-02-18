@@ -10,6 +10,7 @@ export class HitpointsComponent implements OnInit {
 
   constructor(public modifierService:ModifierService) { }
 
+    public currentHitpoints:number;
     public hitpoints:number;
 
     getHitpoints(){
