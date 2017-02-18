@@ -16,7 +16,7 @@ export class InfoComponent implements OnInit {
   }
   char:string;
   users:User[];
-  level: number;
+  level: number = 0;
 
   selectedUser:User;
 
@@ -38,13 +38,9 @@ export class InfoComponent implements OnInit {
         this.modifierService.setLvlMod(x);
         console.log(this.modifierService.getLvl(false));
         console.log(this.level);
-
-        return;
+        return x;
       }
-
-    this.level = 20;
     }
-    this.modifierService.setLvlMod(this.level);
   }
 
   ngOnInit() {
