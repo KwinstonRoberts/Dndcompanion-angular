@@ -3,7 +3,7 @@
     <div class="card" class="col s2" *ngFor='let x of ["PP","GP","EP","SP","CP"]'>
       <div class="card-content">
         <h6>{{x}}</h6>
-        <input type="text"/>
+        <input type="text" value ="{{x}}"/>
       </div>
     </div>
     <button class="col s2 offset-s10 btn blue nudge"(click)="addEquipment()">+</button>
