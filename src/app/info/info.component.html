@@ -1,7 +1,8 @@
 <div class="card col s12 m6">
   <div class="card-content">
     <h6>Character name</h6>
-      <input (blur)="pickUser(char)" [(ngModel)]="char"/>
+      <input class="col s12" (blur)="pickUser(char)" [(ngModel)]="char"/>
+      <button class="'btn grey lighen-1 col s6">Save</button> <button (click)="pickUser(char)" class='bton blue col s6'>Load</button>
   </div>
 </div>
 
