@@ -11,7 +11,7 @@ export class SecondariesComponent implements OnInit {
   constructor(public modifierService:ModifierService) { }
 
   AC:number = 10 + this.modifierService.getMod("Dexterity");
-  Initiative:number = 10 + this.modifierService.getMod("Dexterity");
+  initiative:number = 10 + this.modifierService.getMod("Dexterity");
   speed:number = 10 + this.modifierService.getMod("Dexterity");
 
 
