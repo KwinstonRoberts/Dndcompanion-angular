@@ -1,0 +1,9 @@
+<div class="card">
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addAttack()">+</button>
+    <div *ngFor="let attack of attacks">
+      <div class='col s10'><input value ="{{attack}}"/></div><button (click)="removeAttack(attack)" class="col s2 btn red">-</button>
+    </div>
+  </div>
+  <h5 class="center">Attacks and Spells</h5>
+</div>

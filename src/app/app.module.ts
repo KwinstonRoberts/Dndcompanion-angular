@@ -16,6 +16,7 @@ import {UsersService} from "./users.service";
 import { SecondariesComponent } from './secondaries/secondaries.component';
 import { HitpointsComponent } from './hitpoints/hitpoints.component';
 import { SaveHitsComponent } from './save-hits/save-hits.component';
+import { AttacksComponent } from './attacks/attacks.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SaveHitsComponent } from './save-hits/save-hits.component';
     LanguagesProfsComponent,
     SecondariesComponent,
     HitpointsComponent,
-    SaveHitsComponent
+    SaveHitsComponent,
+    AttacksComponent
   ],
   imports: [
     BrowserModule,
