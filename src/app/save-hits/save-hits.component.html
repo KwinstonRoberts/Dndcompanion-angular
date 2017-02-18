@@ -9,13 +9,13 @@
     <div class="row">
       <h6 class="col s6">Successes</h6>
       <div class="col s6">
-        <input name="success1" id="success1" class="col s4" [(ngModel)]="successes[0]" type="checkbox"/>
+        <input type="range" min="0" max="3" [(ngModel)]="successes"/>
       </div>
     </div>
     <div class="row">
       <h6 class="col s6">Failures</h6>
       <div class="col s6">
-        <input name="fail1" class="col s4" [(ngModel)]="failures[0]" type="checkbox"/>
+        <input type="range" min="0" max="3" [(ngModel)]="failures"/>
       </div>
     </div>
     <h5 class="center">Death Saves</h5>

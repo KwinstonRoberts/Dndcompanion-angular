@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaveHitsComponent implements OnInit {
 
-  successes:boolean[] = [false,false,false];
-  failures:boolean[] = [false,false,false];
+  successes:number;
+  failures:number;
 
 
   constructor() { }
