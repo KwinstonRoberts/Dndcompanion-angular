@@ -14,7 +14,7 @@ export class HitpointsComponent implements OnInit {
     public hitpoints:number;
 
      setCurrentHP(){
-      return this.getHitpoints() - this.damage;
+      this.currentHP =  this.getHitpoints() - this.damage;
     }
 
     getHitpoints(){
@@ -22,6 +22,7 @@ export class HitpointsComponent implements OnInit {
     }
 
   ngOnInit() {
+      this.setCurrentHP();
   }
 
 }
