@@ -6,9 +6,9 @@
         <input type="text"/>
       </div>
     </div>
-    <button class="col s2 offset-s10 btn blue nudge"(click)="addAttack()">+</button>
-    <div *ngFor="let attack of attacks">
-      <div class='col s10'><input value ="{{attack}}"/></div><button (click)="removeAttack(attack)" class="col s2 btn red">-</button>
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addEquipment()">+</button>
+    <div *ngFor="let equip of equipment">
+      <div class='col s10'><input value ="{{equip}}"/></div><button (click)="removeEquipment(equip)" class="col s2 btn red">-</button>
     </div>
   </div>
   <h5 class="center">Equipment</h5>
