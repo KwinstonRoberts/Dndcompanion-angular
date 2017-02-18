@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ModifierService} from "../modifier.service";
 
 @Component({
   selector: 'app-hitpoints',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HitpointsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modifierService:ModifierService) { }
+
+    public hitpoints:number = 11 + this.modifierService.getMod("Constitution");
 
   ngOnInit() {
   }
