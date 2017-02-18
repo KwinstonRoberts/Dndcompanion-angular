@@ -2,7 +2,7 @@
   <div class="card-content" style="height:400px;overflow-y: scroll">
     <div class="col s2" *ngFor='let x of ["PP","GP","EP","SP","CP"]'>
       <h6>{{x}}</h6>
-      <input type="text" value="{{x}}"/>
+      <input type="text"/>
     </div>
     <button class="col s2 offset-s10 btn blue nudge" (click)="addEquipment()">+</button>
     <div *ngFor="let equip of equipment">
