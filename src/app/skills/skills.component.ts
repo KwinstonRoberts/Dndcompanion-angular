@@ -8,7 +8,7 @@ import {ModifierService} from "../modifier.service";
 })
 export class SkillsComponent implements OnInit {
 
-  constructor(private modifierService:ModifierService) { }
+  constructor(public modifierService:ModifierService) { }
 
  public skills:(string|Number|boolean)[][] =
    [["Acrobatics", 0,"Dexterity",false],
