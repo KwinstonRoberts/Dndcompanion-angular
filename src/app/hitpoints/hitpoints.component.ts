@@ -9,7 +9,7 @@ import {ModifierService} from "../modifier.service";
 export class HitpointsComponent implements OnInit {
 
   constructor(public modifierService:ModifierService) { }
-    public damage:number;
+    public damage:number = 0;
     public currentHP:number;
     public hitpoints:number;
 
