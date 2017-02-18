@@ -17,12 +17,14 @@ export class InfoComponent implements OnInit {
   char:string;
   users:User[];
   level: number = 0;
-  selectedUser = this.pickUser(this.char);
+
+  ngAferOnInit(){}
+  selectedUser:User;
 
   pickUser(name:string){
     for(var x=0; x<this.users.length; x++){
       if(this.users[x].character_name === name){
-        return this.users[x]
+        this.selectedUser =  this.users[x];
       }
     }
   }
