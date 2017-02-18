@@ -1,7 +1,7 @@
 <div class="card col s12">
   <div class="card-content">
     <h5 class="center">Hitpoints</h5>
-    <h3 class="center">{{(getHitpoints() - damage) + '/' + getHitpoints()}}</h3>
+    <h3 class="center">{{getCurrentHP() + '/' + getHitpoints()}}</h3>
     <h6>Damage</h6>
     <input [(ngModel)]="damage"/>
   </div>

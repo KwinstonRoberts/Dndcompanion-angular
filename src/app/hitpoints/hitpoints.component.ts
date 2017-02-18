@@ -10,8 +10,12 @@ export class HitpointsComponent implements OnInit {
 
   constructor(public modifierService:ModifierService) { }
     public damage:number;
-    public currentHitpoints:number;
+    public currentHP:number;
     public hitpoints:number;
+
+    getCurrentHP(){
+      return this.getHitpoints()-this.damage;
+    }
 
     getHitpoints(){
       return this.modifierService.getMod("Constitution") + 11;
