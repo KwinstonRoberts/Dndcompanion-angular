@@ -18,7 +18,6 @@ export class InfoComponent implements OnInit {
   users:User[];
   level: number = 0;
 
-  ngAferOnInit(){}
   selectedUser:User;
 
   pickUser(name:string){
@@ -43,7 +42,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit() {
     this.usersService.getUsers().then((users:User[]) => {
-      console.log(users[0]);
+      console.log(users);
       this.users = users.map((user) => {
         user.info.level =  this.calculate(user.info.experience);
         return user;
