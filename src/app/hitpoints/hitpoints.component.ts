@@ -12,7 +12,7 @@ export class HitpointsComponent implements OnInit {
 
     public hitpoints:number;
 
-    public getHitpoints(){
+     getHitpoints(){
       return this.modifierService.getMod("Constitution") + 11;
     }
 
