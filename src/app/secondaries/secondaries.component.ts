@@ -14,7 +14,9 @@ export class SecondariesComponent implements OnInit {
   public initiative:number = 10 + this.modifierService.getMod("Dexterity");
   public speed:number = 10 + this.modifierService.getMod("Dexterity");
 
-
+  public getAC(){
+    return this.modifierService.getMod("Dexterity") + 10;
+  }
 
 
   ngOnInit() {
