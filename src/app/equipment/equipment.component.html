@@ -1,14 +1,14 @@
 <div class="card">
   <div class="card-content" style="height:400px;overflow-y: scroll">
-      <div class="col s2" *ngFor='let x of ["PP","GP","EP","SP","CP"]'>
-        <h6>{{x}}</h6>
-        <input type="text" value ="{{x}}"/>
-      </div>
+    <div class="col s2" *ngFor='let x of ["PP","GP","EP","SP","CP"]'>
+      <h6>{{x}}</h6>
+      <input type="text" value="{{x}}"/>
     </div>
-    <button class="col s2 offset-s10 btn blue nudge"(click)="addEquipment()">+</button>
+    <button class="col s2 offset-s10 btn blue nudge" (click)="addEquipment()">+</button>
     <div *ngFor="let equip of equipment">
-      <div class='col s10'><input value ="{{equip}}"/></div><button (click)="removeEquipment(equip)" class="col s2 btn red">-</button>
+      <div class='col s10'><input value="{{equip}}"/></div>
+      <button (click)="removeEquipment(equip)" class="col s2 btn red">-</button>
     </div>
+    <h5 class="center">Equipment</h5>
   </div>
-  <h5 class="center">Equipment</h5>
 </div>
