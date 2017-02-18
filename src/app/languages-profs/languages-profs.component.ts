@@ -19,7 +19,7 @@ export class LanguagesProfsComponent implements OnInit {
   }
 
   addLanguageProf(){
-    this.languageProfs.push("Language or Prof #" + this.languageProfId);
+    this.languageProfs.push("Attack or Spell #" + this.languageProfId);
     this.languageProfId++;
   }
   ngOnInit() {
