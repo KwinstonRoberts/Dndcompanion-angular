@@ -1,4 +1,4 @@
-<div class="card white nudge col s6 l12" *ngFor="let stat of stats; ">
+<div class="card white nudge col s6 l12" *ngFor="let stat of stats;">
 
   <div class="card-content">
   <h6>
@@ -9,6 +9,6 @@
   <h5 class="center grey lighten-1 rounded">{{modifier.getMod(stat[0])}}</h5>
   </div>
 </div>
-<div class="card">
-  <div class="hexagon" (click)="rollDice">{{diceRoll}}</div>
+<div class="card col s6 l12">
+  <div class="card-content hexagon" (click)="rollDice()">{{diceRoll}}</div>
 </div>
