@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addTrait()">+</button>
+    <div *ngFor="let trait of traits">
+      <div class='col s10'><input value ="{{trait}}"/></div><button (click)="removeTrait(trait)" class="col s2 btn red">-</button>
+    </div>
+  </div>
+  <h5 class="center">Personality Traits</h5>
+</div>
+<div class="card">
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addIdeal()">+</button>
+    <div *ngFor="let ideal of ideals">
+      <div class='col s10'><input value ="{{ideal}}"/></div><button (click)="removeIdeal(ideal)" class="col s2 btn red">-</button>
+    </div>
+  </div>
+  <h5 class="center">Ideals</h5>
+</div>
+<div class="card">
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addBond()">+</button>
+    <div *ngFor="let bond of bonds">
+      <div class='col s10'><input value ="{{bond}}"/></div><button (click)="removeBond(bond)" class="col s2 btn red">-</button>
+    </div>
+  </div>
+  <h5 class="center">Bonds</h5>
+</div>
+<div class="card">
+  <div class="card-content" style="height:400px;overflow-y: scroll">
+    <button class="col s2 offset-s10 btn blue nudge"(click)="addFlaw()">+</button>
+    <div *ngFor="let flaw of flaws">
+      <div class='col s10'><input value ="{{flaw}}"/></div><button (click)="removeFlaw(flaw)" class="col s2 btn red">-</button>
+    </div>
+  </div>
+  <h5 class="center">Personality Traits</h5>
+</div>

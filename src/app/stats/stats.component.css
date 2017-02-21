@@ -24,7 +24,7 @@
   position: absolute;
   top: 0;
   right: calc((100% / 2) - ((100% * 0.57735) / 2));
-  background-color: black;
+  background-color: inherit;
   height: inherit;
   width: inherit;
   content: '';

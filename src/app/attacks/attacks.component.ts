@@ -22,7 +22,7 @@ export class AttacksComponent implements OnInit {
   }
 
   addAttack(){
-    this.attacks.push("Language or Prof #" + this.attackId);
+    this.attacks.push("Attack #" + this.attackId);
     this.attackId++;
   }
 
