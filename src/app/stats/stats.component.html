@@ -9,6 +9,6 @@
   <h5 class="center grey lighten-1 rounded">{{modifier.getMod(stat[0])}}</h5>
   </div>
 </div>
-<div class="card hexagon btn" (click)="rollDice">
-  {{diceRoll}}
+<div class="card" (click)="rollDice">
+  <div class="hexagon" (click)="rollDice">{{diceRoll}}</div>
 </div>
